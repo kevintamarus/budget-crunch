@@ -8,38 +8,44 @@ export default class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      totalIncome: 0,
-      totalExpenses: 0,
-      savingsPerMonth: 0,
+      totalIncome: `$ 0`,
+      totalExpenses: `$ 0`,
+      savingsPerMonth: `$ 0`,
 
-      weeklyIncome: 0,
-      workIncome: 0
+      weeklyIncome: '0'
     };
   }
 
-  handleChangeInput = input => {
-    console.log(input, 'input');
+  handleChangeInput = (input, weeklyIncome) => {
+    this.setState({ [weeklyIncome]: input }, this.calculateIncome);
+  };
+
+  calculateIncome = () => {
+    const totalIncome = `$ ${((this.state.weeklyIncome / 5) * 22).toFixed(2)}`;
+    this.setState({ totalIncome });
   };
 
   render() {
-    const { totalIncome, totalExpenses, savingsPerMonth, weeklyIncome, workIncome } = this.state;
+    const { totalIncome, totalExpenses, savingsPerMonth, workIncome, weeklyIncome } = this.state;
     return (
       <ScrollView>
         <View style={styles.container}>
           <View style={styles.blankView} />
           <View style={styles.displayContainer}>
-            <Text>Total Income: {this.state.totalIncome}</Text>
-            <Text>Total Expenses: {this.state.totalExpenses}</Text>
-            <Text>Savings per month: {this.state.savingsPerMonth}</Text>
+            <Text>Total Income: {totalIncome}</Text>
+            <Text>Total Expenses: {totalExpenses}</Text>
+            <Text>Savings per month: {savingsPerMonth}</Text>
           </View>
+          <Text>Income</Text>
           <View style={styles.incomeFormContainer}>
             <Input
               label="Weekly"
-              name={weeklyIncome}
               value={weeklyIncome}
-              onChangeText={this.handleChangeInput}
+              selectTextOnFocus
+              onChangeText={input => this.handleChangeInput(input, 'weeklyIncome')}
             />
           </View>
+          <Text>Expenses</Text>
         </View>
       </ScrollView>
     );
