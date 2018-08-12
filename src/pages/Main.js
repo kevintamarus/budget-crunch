@@ -8,11 +8,16 @@ export default class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      totalIncome: `$ 0`,
-      totalExpenses: `$ 0`,
-      savingsPerMonth: `$ 0`,
+      totalIncome: 0,
+      totalExpenses: 0,
+      savings: 0,
 
-      weeklyIncome: '0'
+      weeklyIncome: '0',
+
+      rentExpenses: '0',
+      carExpenses: '0',
+      foodExpenses: '0',
+      spendingExpenses: '0'
     };
   }
 
@@ -21,20 +26,47 @@ export default class Main extends React.Component {
   };
 
   calculateIncome = () => {
-    const totalIncome = `$ ${((this.state.weeklyIncome / 5) * 22).toFixed(2)}`;
-    this.setState({ totalIncome });
+    const totalIncome = ((this.state.weeklyIncome / 5) * 22).toFixed(2);
+    this.setState({ totalIncome }, this.calculateExpenses);
+  };
+
+  calculateExpenses = () => {
+    const { rentExpenses, carExpenses, foodExpenses, spendingExpenses } = this.state;
+    const totalExpenses = (
+      parseInt(rentExpenses) +
+      parseInt(carExpenses) +
+      parseInt(foodExpenses) +
+      parseInt(spendingExpenses)
+    ).toFixed();
+    this.setState({ totalExpenses }, this.calculateSavings);
+  };
+
+  calculateSavings = () => {
+    const savings = (parseInt(this.state.totalIncome) - parseInt(this.state.totalExpenses)).toFixed(
+      2
+    );
+    this.setState({ savings });
   };
 
   render() {
-    const { totalIncome, totalExpenses, savingsPerMonth, workIncome, weeklyIncome } = this.state;
+    const {
+      totalIncome,
+      totalExpenses,
+      savings,
+      weeklyIncome,
+      rentExpenses,
+      carExpenses,
+      foodExpenses,
+      spendingExpenses
+    } = this.state;
     return (
       <ScrollView>
         <View style={styles.container}>
           <View style={styles.blankView} />
           <View style={styles.displayContainer}>
-            <Text>Total Income: {totalIncome}</Text>
-            <Text>Total Expenses: {totalExpenses}</Text>
-            <Text>Savings per month: {savingsPerMonth}</Text>
+            <Text>Total Income: $ {totalIncome}</Text>
+            <Text>Total Expenses: $ {totalExpenses}</Text>
+            <Text>Savings per month: $ {savings}</Text>
           </View>
           <Text>Income</Text>
           <View style={styles.incomeFormContainer}>
@@ -46,6 +78,32 @@ export default class Main extends React.Component {
             />
           </View>
           <Text>Expenses</Text>
+          <View style={styles.expenseFormContainer}>
+            <Input
+              label="Rent"
+              value={rentExpenses}
+              selectTextOnFocus
+              onChangeText={input => this.handleChangeInput(input, 'rentExpenses')}
+            />
+            <Input
+              label="Car"
+              value={carExpenses}
+              selectTextOnFocus
+              onChangeText={input => this.handleChangeInput(input, 'carExpenses')}
+            />
+            <Input
+              label="Food"
+              value={foodExpenses}
+              selectTextOnFocus
+              onChangeText={input => this.handleChangeInput(input, 'foodExpenses')}
+            />
+            <Input
+              label="Spending"
+              value={spendingExpenses}
+              selectTextOnFocus
+              onChangeText={input => this.handleChangeInput(input, 'spendingExpenses')}
+            />
+          </View>
         </View>
       </ScrollView>
     );
