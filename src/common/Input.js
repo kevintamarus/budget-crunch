@@ -1,9 +1,9 @@
 import React from 'react';
-import { TextInput, View } from 'react-native';
+import { Text, TextInput, View } from 'react-native';
 
-import Text from './Text.js';
+// import { Text } from './Text';
 
-const Input = props => {
+export const Input = props => {
   return (
     <View>
       {props.label && <Text>{props.label}</Text>}
@@ -11,5 +11,3 @@ const Input = props => {
     </View>
   );
 };
-
-export default Input;
