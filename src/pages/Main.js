@@ -10,10 +10,19 @@ export default class Main extends React.Component {
     this.state = {
       totalIncome: 0,
       totalExpenses: 0,
-      savingsPerMonth: 0
+      savingsPerMonth: 0,
+
+      weeklyIncome: 0,
+      workIncome: 0
     };
   }
+
+  handleChangeInput = input => {
+    console.log(input, 'input');
+  };
+
   render() {
+    const { totalIncome, totalExpenses, savingsPerMonth, weeklyIncome, workIncome } = this.state;
     return (
       <ScrollView>
         <View style={styles.container}>
@@ -23,7 +32,14 @@ export default class Main extends React.Component {
             <Text>Total Expenses: {this.state.totalExpenses}</Text>
             <Text>Savings per month: {this.state.savingsPerMonth}</Text>
           </View>
-          <View style={styles.formContainer} />
+          <View style={styles.incomeFormContainer}>
+            <Input
+              label="Weekly"
+              name={weeklyIncome}
+              value={weeklyIncome}
+              onChangeText={this.handleChangeInput}
+            />
+          </View>
         </View>
       </ScrollView>
     );
@@ -32,8 +48,7 @@ export default class Main extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#fff',
-    alignItems: 'center'
+    backgroundColor: '#fff'
   },
   blankView: {
     padding: 20
@@ -41,7 +56,10 @@ const styles = StyleSheet.create({
   displayContainer: {
     alignItems: 'center'
   },
-  formContainer: {
-    alignItems: center
+  incomeFormContainer: {
+    alignItems: 'center'
+  },
+  expenseFormContainer: {
+    alignItems: 'center'
   }
 });

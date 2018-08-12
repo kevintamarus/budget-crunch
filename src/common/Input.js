@@ -1,15 +1,30 @@
 import React from 'react';
-import { TextInput, View } from 'react-native';
+import { StyleSheet, TextInput, View } from 'react-native';
 
 import Text from './Text.js';
 
 const Input = props => {
   return (
-    <View>
+    <View style={styles.container}>
       {props.label && <Text>{props.label}</Text>}
-      <TextInput {...props} />
+      <View style={styles.inputContainer}>
+        <TextInput {...props} />
+      </View>
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    width: '90%',
+    marginLeft: '5%',
+    marginRight: '5%'
+  },
+  inputContainer: {
+    borderColor: '#000000',
+    borderWidth: 2,
+    borderRadius: 5
+  }
+});
 
 export default Input;
