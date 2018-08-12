@@ -1,0 +1,33 @@
+dependencies: \
+  /Users/kevintamarus/Documents/budget-crunch/node_modules/react-native/Libraries/NativeAnimation/RCTNativeAnimatedModule.m \
+  /Users/kevintamarus/Documents/budget-crunch/node_modules/react-native/Libraries/NativeAnimation/RCTNativeAnimatedModule.h \
+  /Users/kevintamarus/Documents/budget-crunch/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeModule.h \
+  /Users/kevintamarus/Documents/budget-crunch/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTDefines.h \
+  /Users/kevintamarus/Documents/budget-crunch/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTEventDispatcher.h \
+  /Users/kevintamarus/Documents/budget-crunch/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridge.h \
+  /Users/kevintamarus/Documents/budget-crunch/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeDelegate.h \
+  /Users/kevintamarus/Documents/budget-crunch/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTJavaScriptLoader.h \
+  /Users/kevintamarus/Documents/budget-crunch/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTFrameUpdate.h \
+  /Users/kevintamarus/Documents/budget-crunch/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTInvalidating.h \
+  /Users/kevintamarus/Documents/budget-crunch/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTEventEmitter.h \
+  /Users/kevintamarus/Documents/budget-crunch/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTUIManager.h \
+  /Users/kevintamarus/Documents/budget-crunch/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTRootView.h \
+  /Users/kevintamarus/Documents/budget-crunch/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTViewManager.h \
+  /Users/kevintamarus/Documents/budget-crunch/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTConvert.h \
+  /Users/kevintamarus/Documents/budget-crunch/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAnimationType.h \
+  /Users/kevintamarus/Documents/budget-crunch/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBorderStyle.h \
+  /Users/kevintamarus/Documents/budget-crunch/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTLog.h \
+  /Users/kevintamarus/Documents/budget-crunch/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAssert.h \
+  /Users/kevintamarus/Documents/budget-crunch/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTUtils.h \
+  /Users/kevintamarus/Documents/budget-crunch/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTPointerEvents.h \
+  /Users/kevintamarus/Documents/budget-crunch/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTTextDecorationLineType.h \
+  /Users/kevintamarus/Documents/budget-crunch/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
+  /Users/kevintamarus/Documents/budget-crunch/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
+  /Users/kevintamarus/Documents/budget-crunch/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
+  /Users/kevintamarus/Documents/budget-crunch/ios/build/Build/Products/Debug-iphonesimulator/include/React/UIView+React.h \
+  /Users/kevintamarus/Documents/budget-crunch/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTComponent.h \
+  /Users/kevintamarus/Documents/budget-crunch/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTUIManagerObserverCoordinator.h \
+  /Users/kevintamarus/Documents/budget-crunch/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTUIManagerUtils.h \
+  /Users/kevintamarus/Documents/budget-crunch/node_modules/react-native/Libraries/NativeAnimation/Nodes/RCTValueAnimatedNode.h \
+  /Users/kevintamarus/Documents/budget-crunch/node_modules/react-native/Libraries/NativeAnimation/Nodes/RCTAnimatedNode.h \
+  /Users/kevintamarus/Documents/budget-crunch/node_modules/react-native/Libraries/NativeAnimation/RCTNativeAnimatedNodesManager.h

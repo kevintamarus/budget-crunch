@@ -1,0 +1,24 @@
+dependencies: \
+  /Users/kevintamarus/Documents/budget-crunch/node_modules/react-native/Libraries/Blob/RCTFileReaderModule.m \
+  /Users/kevintamarus/Documents/budget-crunch/node_modules/react-native/Libraries/Blob/RCTFileReaderModule.h \
+  /Users/kevintamarus/Documents/budget-crunch/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeModule.h \
+  /Users/kevintamarus/Documents/budget-crunch/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTDefines.h \
+  /Users/kevintamarus/Documents/budget-crunch/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridge.h \
+  /Users/kevintamarus/Documents/budget-crunch/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeDelegate.h \
+  /Users/kevintamarus/Documents/budget-crunch/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTJavaScriptLoader.h \
+  /Users/kevintamarus/Documents/budget-crunch/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTFrameUpdate.h \
+  /Users/kevintamarus/Documents/budget-crunch/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTInvalidating.h \
+  /Users/kevintamarus/Documents/budget-crunch/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTConvert.h \
+  /Users/kevintamarus/Documents/budget-crunch/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAnimationType.h \
+  /Users/kevintamarus/Documents/budget-crunch/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBorderStyle.h \
+  /Users/kevintamarus/Documents/budget-crunch/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTLog.h \
+  /Users/kevintamarus/Documents/budget-crunch/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAssert.h \
+  /Users/kevintamarus/Documents/budget-crunch/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTUtils.h \
+  /Users/kevintamarus/Documents/budget-crunch/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTPointerEvents.h \
+  /Users/kevintamarus/Documents/budget-crunch/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTTextDecorationLineType.h \
+  /Users/kevintamarus/Documents/budget-crunch/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
+  /Users/kevintamarus/Documents/budget-crunch/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
+  /Users/kevintamarus/Documents/budget-crunch/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
+  /Users/kevintamarus/Documents/budget-crunch/node_modules/react-native/Libraries/Blob/RCTBlobManager.h \
+  /Users/kevintamarus/Documents/budget-crunch/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTURLRequestHandler.h \
+  /Users/kevintamarus/Documents/budget-crunch/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTURLRequestDelegate.h
