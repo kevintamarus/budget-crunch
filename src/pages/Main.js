@@ -1,13 +1,16 @@
 import React from 'react';
 import { ScrollView, StyleSheet, View } from 'react-native';
 
-import { Input, Text } from '../common';
+import Input from '../common/Input';
+import Text from '../common/Text';
 
 export default class Main extends React.Component {
   render() {
     return (
       <ScrollView>
-        <Text>Main Page</Text>
+        <View style={styles.container}>
+          <Text>Main Page</Text>
+        </View>
       </ScrollView>
     );
   }
