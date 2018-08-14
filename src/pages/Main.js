@@ -26,25 +26,22 @@ export default class Main extends React.Component {
   };
 
   calculateIncome = () => {
-    const totalIncome = ((this.state.weeklyIncome / 5) * 22).toFixed(2);
+    const totalIncome = (this.state.weeklyIncome / 5) * 22;
     this.setState({ totalIncome }, this.calculateExpenses);
   };
 
   calculateExpenses = () => {
     const { rentExpenses, carExpenses, foodExpenses, spendingExpenses } = this.state;
-    const totalExpenses = (
+    const totalExpenses =
       (parseInt(rentExpenses) || 0) +
       (parseInt(carExpenses) || 0) +
       (parseInt(foodExpenses) || 0) +
-      (parseInt(spendingExpenses) || 0)
-    ).toFixed();
+      (parseInt(spendingExpenses) || 0);
     this.setState({ totalExpenses }, this.calculateSavings);
   };
 
   calculateSavings = () => {
-    const savings = (parseInt(this.state.totalIncome) - parseInt(this.state.totalExpenses)).toFixed(
-      2
-    );
+    const savings = parseInt(this.state.totalIncome) - parseInt(this.state.totalExpenses);
     this.setState({ savings });
   };
 
@@ -64,9 +61,9 @@ export default class Main extends React.Component {
         <View style={styles.container}>
           <View style={styles.blankView} />
           <View style={styles.displayContainer}>
-            <Text style={{ color: 'navy' }}>Total Income: $ {totalIncome}</Text>
-            <Text style={{ color: 'red' }}>Total Expenses: $ {totalExpenses}</Text>
-            <Text style={{ color: 'green' }}>Savings per month: $ {savings}</Text>
+            <Text style={{ color: 'navy' }}>Total Income: $ {totalIncome.toFixed(2)}</Text>
+            <Text style={{ color: 'red' }}>Total Expenses: $ {totalExpenses.toFixed(2)}</Text>
+            <Text style={{ color: 'green' }}>Savings Per Month: $ {savings.toFixed(2)}</Text>
           </View>
           <Text>Income</Text>
           <View style={styles.incomeFormContainer}>
