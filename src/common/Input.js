@@ -16,7 +16,7 @@ const Input = props => {
 
 const styles = StyleSheet.create({
   container: {
-    width: '90%',
+    width: '80%',
     marginLeft: '5%',
     marginRight: '5%'
   },
