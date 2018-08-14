@@ -22,6 +22,9 @@ export default class Main extends React.Component {
   }
 
   handleChangeInput = (input, weeklyIncome) => {
+    if (input === '') {
+      input = '0';
+    }
     this.setState({ [weeklyIncome]: input }, this.calculateIncome);
   };
 
