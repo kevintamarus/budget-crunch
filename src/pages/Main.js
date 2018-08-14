@@ -65,7 +65,7 @@ export default class Main extends React.Component {
             <Text style={{ color: 'red' }}>Total Expenses: $ {totalExpenses.toFixed(2)}</Text>
             <Text style={{ color: 'green' }}>Savings Per Month: $ {savings.toFixed(2)}</Text>
           </View>
-          <Text>Income</Text>
+          <Text style={{ textDecorationLine: 'underline' }}>Income</Text>
           <View style={styles.incomeFormContainer}>
             <Input
               label="Weekly"
@@ -74,7 +74,7 @@ export default class Main extends React.Component {
               onChangeText={input => this.handleChangeInput(input, 'weeklyIncome')}
             />
           </View>
-          <Text>Expenses</Text>
+          <Text style={{ textDecorationLine: 'underline' }}>Expenses</Text>
           <View style={styles.expenseFormContainer}>
             <Input
               label="Rent"
@@ -109,7 +109,8 @@ export default class Main extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#fff'
+    backgroundColor: '#fff',
+    alignItems: 'center'
   },
   blankView: {
     padding: 20

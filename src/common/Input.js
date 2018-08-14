@@ -6,7 +6,7 @@ import Text from './Text.js';
 const Input = props => {
   return (
     <View style={styles.container}>
-      {props.label && <Text>{props.label}</Text>}
+      {props.label && <Text style={{ color: '#6495ED' }}>{props.label}</Text>}
       <View style={styles.inputContainer}>
         <TextInput style={styles.input} {...props} />
       </View>
@@ -16,7 +16,7 @@ const Input = props => {
 
 const styles = StyleSheet.create({
   container: {
-    width: '80%',
+    width: 250,
     marginLeft: '5%',
     marginRight: '5%'
   },
