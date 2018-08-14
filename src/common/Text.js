@@ -1,8 +1,14 @@
 import React from 'react';
-import { Text as RNText } from 'react-native';
+import { StyleSheet, Text as RNText } from 'react-native';
 
 const Text = props => {
-  return <RNText>{props.children}</RNText>;
+  const styles = StyleSheet.create({
+    text: {
+      fontSize: 25,
+      ...props.style
+    }
+  });
+  return <RNText style={styles.text}>{props.children}</RNText>;
 };
 
 export default Text;

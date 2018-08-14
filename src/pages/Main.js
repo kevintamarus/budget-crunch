@@ -22,9 +22,6 @@ export default class Main extends React.Component {
   }
 
   handleChangeInput = (input, weeklyIncome) => {
-    if (input === '') {
-      input = '0';
-    }
     this.setState({ [weeklyIncome]: input }, this.calculateIncome);
   };
 
@@ -36,10 +33,10 @@ export default class Main extends React.Component {
   calculateExpenses = () => {
     const { rentExpenses, carExpenses, foodExpenses, spendingExpenses } = this.state;
     const totalExpenses = (
-      parseInt(rentExpenses) +
-      parseInt(carExpenses) +
-      parseInt(foodExpenses) +
-      parseInt(spendingExpenses)
+      (parseInt(rentExpenses) || 0) +
+      (parseInt(carExpenses) || 0) +
+      (parseInt(foodExpenses) || 0) +
+      (parseInt(spendingExpenses) || 0)
     ).toFixed();
     this.setState({ totalExpenses }, this.calculateSavings);
   };
@@ -67,9 +64,9 @@ export default class Main extends React.Component {
         <View style={styles.container}>
           <View style={styles.blankView} />
           <View style={styles.displayContainer}>
-            <Text>Total Income: $ {totalIncome}</Text>
-            <Text>Total Expenses: $ {totalExpenses}</Text>
-            <Text>Savings per month: $ {savings}</Text>
+            <Text style={{ color: 'navy' }}>Total Income: $ {totalIncome}</Text>
+            <Text style={{ color: 'red' }}>Total Expenses: $ {totalExpenses}</Text>
+            <Text style={{ color: 'green' }}>Savings per month: $ {savings}</Text>
           </View>
           <Text>Income</Text>
           <View style={styles.incomeFormContainer}>
