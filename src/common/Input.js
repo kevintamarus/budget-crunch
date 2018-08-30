@@ -16,7 +16,7 @@ const Input = props => {
 
 const styles = StyleSheet.create({
   container: {
-    width: 250,
+    minWidth: '80%',
     marginLeft: '5%',
     marginRight: '5%'
   },
@@ -27,7 +27,8 @@ const styles = StyleSheet.create({
   },
   input: {
     height: 40,
-    fontSize: 20
+    fontSize: 20,
+    textAlign: 'center'
   }
 });
 
