@@ -16,9 +16,7 @@ const Input = props => {
 
 const styles = StyleSheet.create({
   container: {
-    minWidth: '80%',
-    marginLeft: '5%',
-    marginRight: '5%'
+    minWidth: '100%'
   },
   inputContainer: {
     borderColor: '#6495ED',

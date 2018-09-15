@@ -62,7 +62,10 @@ export default class Main extends React.Component {
     return (
       <SafeAreaView style={styles.safeViewContainer}>
         <BudgetDisplay {...{ totalIncome, totalExpenses, savings }} />
-        <ScrollView>
+        <ScrollView contentContainerStyle={styles.scrollContainer}>
+          <AmountCard />
+          <AmountCard />
+          <AmountCard />
           <AmountCard />
           <View style={styles.container}>
             <View style={styles.blankView} />
@@ -112,6 +115,11 @@ export default class Main extends React.Component {
 const styles = StyleSheet.create({
   safeViewContainer: {
     flex: 1
+  },
+  scrollContainer: {
+    paddingLeft: '5%',
+    paddingRight: '5%',
+    alignItems: 'center'
   },
   container: {
     backgroundColor: '#fff',
