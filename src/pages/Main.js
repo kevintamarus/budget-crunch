@@ -1,6 +1,7 @@
 import React from 'react';
 import { ScrollView, SafeAreaView, StyleSheet, View } from 'react-native';
 
+import AmountCard from '../common/AmountCard';
 import Input from '../common/Input';
 import Text from '../common/Text';
 
@@ -62,6 +63,7 @@ export default class Main extends React.Component {
       <SafeAreaView style={styles.safeViewContainer}>
         <BudgetDisplay {...{ totalIncome, totalExpenses, savings }} />
         <ScrollView>
+          <AmountCard />
           <View style={styles.container}>
             <View style={styles.blankView} />
             <Text style={{ textDecorationLine: 'underline' }}>Income</Text>
