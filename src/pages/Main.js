@@ -1,8 +1,10 @@
 import React from 'react';
-import { ScrollView, StyleSheet, View } from 'react-native';
+import { ScrollView, SafeAreaView, StyleSheet, View } from 'react-native';
 
 import Input from '../common/Input';
 import Text from '../common/Text';
+
+import BudgetDisplay from '../components/BudgetDisplay';
 
 export default class Main extends React.Component {
   constructor(props) {
@@ -57,57 +59,58 @@ export default class Main extends React.Component {
       spendingExpenses
     } = this.state;
     return (
-      <ScrollView>
-        <View style={styles.container}>
-          <View style={styles.blankView} />
-          <View style={styles.displayContainer}>
-            <Text style={{ color: 'navy' }}>Total Income: $ {totalIncome.toFixed(2)}</Text>
-            <Text style={{ color: 'red' }}>Total Expenses: $ {totalExpenses.toFixed(2)}</Text>
-            <Text style={{ color: 'green' }}>Savings Per Month: $ {savings.toFixed(2)}</Text>
+      <SafeAreaView style={styles.safeViewContainer}>
+        <BudgetDisplay {...{ totalIncome, totalExpenses, savings }} />
+        <ScrollView>
+          <View style={styles.container}>
+            <View style={styles.blankView} />
+            <Text style={{ textDecorationLine: 'underline' }}>Income</Text>
+            <View style={styles.incomeFormContainer}>
+              <Input
+                label="Weekly"
+                value={weeklyIncome}
+                selectTextOnFocus
+                onChangeText={input => this.handleChangeInput(input, 'weeklyIncome')}
+              />
+            </View>
+            <Text style={{ textDecorationLine: 'underline' }}>Expenses</Text>
+            <View style={styles.expenseFormContainer}>
+              <Input
+                label="Rent"
+                value={rentExpenses}
+                selectTextOnFocus
+                onChangeText={input => this.handleChangeInput(input, 'rentExpenses')}
+              />
+              <Input
+                label="Car"
+                value={carExpenses}
+                selectTextOnFocus
+                onChangeText={input => this.handleChangeInput(input, 'carExpenses')}
+              />
+              <Input
+                label="Food"
+                value={foodExpenses}
+                selectTextOnFocus
+                onChangeText={input => this.handleChangeInput(input, 'foodExpenses')}
+              />
+              <Input
+                label="Spending"
+                value={spendingExpenses}
+                selectTextOnFocus
+                onChangeText={input => this.handleChangeInput(input, 'spendingExpenses')}
+              />
+            </View>
           </View>
-          <Text style={{ textDecorationLine: 'underline' }}>Income</Text>
-          <View style={styles.incomeFormContainer}>
-            <Input
-              label="Weekly"
-              value={weeklyIncome}
-              selectTextOnFocus
-              onChangeText={input => this.handleChangeInput(input, 'weeklyIncome')}
-            />
-          </View>
-          <Text style={{ textDecorationLine: 'underline' }}>Expenses</Text>
-          <View style={styles.expenseFormContainer}>
-            <Input
-              label="Rent"
-              value={rentExpenses}
-              selectTextOnFocus
-              onChangeText={input => this.handleChangeInput(input, 'rentExpenses')}
-            />
-            <Input
-              label="Car"
-              value={carExpenses}
-              selectTextOnFocus
-              onChangeText={input => this.handleChangeInput(input, 'carExpenses')}
-            />
-            <Input
-              label="Food"
-              value={foodExpenses}
-              selectTextOnFocus
-              onChangeText={input => this.handleChangeInput(input, 'foodExpenses')}
-            />
-            <Input
-              label="Spending"
-              value={spendingExpenses}
-              selectTextOnFocus
-              onChangeText={input => this.handleChangeInput(input, 'spendingExpenses')}
-            />
-          </View>
-        </View>
-      </ScrollView>
+        </ScrollView>
+      </SafeAreaView>
     );
   }
 }
 
 const styles = StyleSheet.create({
+  safeViewContainer: {
+    flex: 1
+  },
   container: {
     backgroundColor: '#fff',
     alignItems: 'center'
