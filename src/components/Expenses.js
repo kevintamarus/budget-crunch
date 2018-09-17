@@ -6,21 +6,34 @@ import AmountCard from 'common/AmountCard';
 import Text from 'common/Text';
 
 class Expenses extends React.Component {
+  state = {
+    expenseItems: []
+  };
+
+  _addExpenseItem = (description, amount) => {
+    const expenseItems = this.state.expenseItems;
+    expenseItems.push({
+      component: <AmountCard />,
+      description,
+      amount
+    });
+    this.setState({ expenseItems });
+  };
+
   render() {
     return (
       <View style={styles.container}>
         <View style={styles.titleContainer}>
           <Text style={styles.title}>Expenses</Text>
           <View style={styles.addButton}>
-            <Icon name="plus" type="material-community" />
+            <Icon name="plus" type="material-community" onPress={this._addExpenseItem} />
           </View>
         </View>
-        <ScrollView contentContainerStyle={styles.container}>
-          <AmountCard />
-          <AmountCard />
-          <AmountCard />
-          <AmountCard />
-        </ScrollView>
+        <View style={styles.itemsContainer}>
+          {this.state.expenseItems.map((item, i) => (
+            <AmountCard key={i} />
+          ))}
+        </View>
       </View>
     );
   }
@@ -48,8 +61,8 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 100
   },
-  scrollContainer: {
-    minWidth: '100%'
+  itemsContainer: {
+    flex: 1
   },
   buttonGroup: {
     flex: 1,
