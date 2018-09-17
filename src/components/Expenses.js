@@ -1,8 +1,8 @@
 import React from 'react';
 import { ScrollView, StyleSheet, View } from 'react-native';
 import { Icon } from 'react-native-elements';
-import Button from 'common/Button.js';
 import AmountCard from 'common/AmountCard';
+import ModalBottom from 'common/ModalBottom';
 import Text from 'common/Text';
 
 class Expenses extends React.Component {
@@ -22,19 +22,24 @@ class Expenses extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <View style={styles.titleContainer}>
-          <Text style={styles.title}>Expenses</Text>
-          <View style={styles.addButton}>
-            <Icon name="plus" type="material-community" onPress={this._addExpenseItem} />
+      <React.Fragment>
+        <ModalBottom isVisible={true}>
+          <Text>ModalBottom</Text>
+        </ModalBottom>
+        <View style={styles.container}>
+          <View style={styles.titleContainer}>
+            <Text style={styles.title}>Expenses</Text>
+            <View style={styles.addButton}>
+              <Icon name="plus" type="material-community" onPress={this._addExpenseItem} />
+            </View>
+          </View>
+          <View style={styles.itemsContainer}>
+            {this.state.expenseItems.map((item, i) => (
+              <AmountCard key={i} />
+            ))}
           </View>
         </View>
-        <View style={styles.itemsContainer}>
-          {this.state.expenseItems.map((item, i) => (
-            <AmountCard key={i} />
-          ))}
-        </View>
-      </View>
+      </React.Fragment>
     );
   }
 }

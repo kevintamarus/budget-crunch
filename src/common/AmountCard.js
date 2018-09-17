@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, TouchableHighlight, View } from 'react-native';
 import { Icon } from 'react-native-elements';
 
-import Text from '../common/Text';
+import Text from 'common/Text';
 
 const AmountCard = props => {
   return (
@@ -21,8 +21,8 @@ const styles = StyleSheet.create({
     flex: 1,
     width: '100%',
     minHeight: 40,
-    paddingTop: '1%',
-    paddingBottom: '1%'
+    paddingTop: '2%',
+    paddingBottom: '2%'
   },
   container: {
     flex: 1,
