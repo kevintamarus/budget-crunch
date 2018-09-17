@@ -23,6 +23,11 @@ class Expenses extends React.Component {
     this.setState({ showModal: false });
   };
 
+  handleChangeInput = (input, name) => {
+    console.log(name, 'name');
+    this.setState({ [name]: input });
+  };
+
   addExpenseItem = (description, amount) => {
     const expenseItems = this.state.expenseItems;
     expenseItems.push({
@@ -35,12 +40,23 @@ class Expenses extends React.Component {
 
   render() {
     const { expenseItems, showModal, description, amount } = this.state;
+    console.log(description, amount, 'values');
     return (
       <React.Fragment>
         <ModalTop isVisible={showModal} onBackdropPress={this._closeModal}>
           <View style={{ flex: 0 }}>
-            <Input label="Description" value={description} selectTextOnFocus />
-            <Input label="Amount" value={amount} selectTextOnFocus />
+            <Input
+              label="Description"
+              value={description}
+              selectTextOnFocus
+              onChangeText={input => this.handleChangeInput(input, 'amount')}
+            />
+            <Input
+              label="Amount"
+              value={amount}
+              selectTextOnFocus
+              onChangeText={input => this.handleChangeInput(input, 'description')}
+            />
             <Button
               onPress={() => {
                 this.addExpenseItem(description, amount);
