@@ -6,8 +6,9 @@ import Input from '../common/Input';
 import Text from '../common/Text';
 
 import BudgetDisplay from '../components/BudgetDisplay';
+import Expenses from 'components/Expenses';
 
-export default class Main extends React.Component {
+class MainScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -63,10 +64,7 @@ export default class Main extends React.Component {
       <SafeAreaView style={styles.safeViewContainer}>
         <BudgetDisplay {...{ totalIncome, totalExpenses, savings }} />
         <ScrollView contentContainerStyle={styles.scrollContainer}>
-          <AmountCard />
-          <AmountCard />
-          <AmountCard />
-          <AmountCard />
+          <Expenses />
           <View style={styles.container}>
             <View style={styles.blankView} />
             <Text style={{ textDecorationLine: 'underline' }}>Income</Text>
@@ -138,3 +136,5 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   }
 });
+
+export default MainScreen;
