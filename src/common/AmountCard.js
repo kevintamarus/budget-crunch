@@ -8,8 +8,8 @@ const AmountCard = props => {
   return (
     <TouchableHighlight style={styles.touchableWrapper} onPress={props.onPress}>
       <View style={styles.container}>
-        <Text style={styles.amount}>$200</Text>
-        <Text style={styles.description}>Example Card</Text>
+        <Text style={styles.amount}>{props.amount}</Text>
+        <Text style={styles.description}>{props.description}</Text>
         <Icon size={15} name="close" type="material-community" color="#000000" />
       </View>
     </TouchableHighlight>

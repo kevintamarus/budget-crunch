@@ -4,7 +4,7 @@ import Text from 'common/Text';
 
 const Button = props => {
   return (
-    <TouchableHighlight style={styles.container}>
+    <TouchableHighlight style={styles.container} onPress={props.onPress}>
       <React.Fragment>
         {typeof props.children === 'string' ? (
           <View style={styles.button}>
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     flex: 1,
     borderWidth: 2,
     borderColor: '#a3a3a3',
-    height: 40,
+    minHeight: '25%',
     alignItems: 'center',
     justifyContent: 'center'
   },

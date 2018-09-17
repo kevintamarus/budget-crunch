@@ -2,18 +2,31 @@ import React from 'react';
 import { ScrollView, StyleSheet, View } from 'react-native';
 import { Icon } from 'react-native-elements';
 import AmountCard from 'common/AmountCard';
-import ModalBottom from 'common/ModalBottom';
+import Button from 'common/Button';
+import Input from 'common/Input';
+import ModalTop from 'common/ModalTop';
 import Text from 'common/Text';
 
 class Expenses extends React.Component {
   state = {
-    expenseItems: []
+    expenseItems: [],
+    showModal: true,
+    description: '',
+    amount: ''
   };
 
-  _addExpenseItem = (description, amount) => {
+  _openModal = () => {
+    this.setState({ showModal: true });
+  };
+
+  _closeModal = () => {
+    this.setState({ showModal: false });
+  };
+
+  addExpenseItem = (description, amount) => {
     const expenseItems = this.state.expenseItems;
     expenseItems.push({
-      component: <AmountCard />,
+      component: <AmountCard {...{ description, amount }} />,
       description,
       amount
     });
@@ -21,20 +34,32 @@ class Expenses extends React.Component {
   };
 
   render() {
+    const { expenseItems, showModal, description, amount } = this.state;
     return (
       <React.Fragment>
-        <ModalBottom isVisible={true}>
-          <Text>ModalBottom</Text>
-        </ModalBottom>
+        <ModalTop isVisible={showModal} onBackdropPress={this._closeModal}>
+          <View style={{ flex: 0 }}>
+            <Input label="Description" value={description} selectTextOnFocus />
+            <Input label="Amount" value={amount} selectTextOnFocus />
+            <Button
+              onPress={() => {
+                this.addExpenseItem(description, amount);
+                this._closeModal();
+              }}
+            >
+              Add
+            </Button>
+          </View>
+        </ModalTop>
         <View style={styles.container}>
           <View style={styles.titleContainer}>
             <Text style={styles.title}>Expenses</Text>
             <View style={styles.addButton}>
-              <Icon name="plus" type="material-community" onPress={this._addExpenseItem} />
+              <Icon name="plus" type="material-community" onPress={this._openModal} />
             </View>
           </View>
           <View style={styles.itemsContainer}>
-            {this.state.expenseItems.map((item, i) => (
+            {expenseItems.map((item, i) => (
               <AmountCard key={i} />
             ))}
           </View>
