@@ -1,11 +1,12 @@
 import React from 'react';
-import { StyleSheet, Text, TouchableHighlight } from 'react-native';
+import { StyleSheet, TouchableHighlight, View } from 'react-native';
+import Text from 'common/Text';
 
 const Button = props => {
   return (
     <TouchableHighlight style={styles.container}>
       <React.Fragment>
-        {props.children === 'string' ? (
+        {typeof props.children === 'string' ? (
           <View style={styles.button}>
             <Text>{props.children}</Text>
           </View>
@@ -22,13 +23,13 @@ const styles = StyleSheet.create({
     flex: 1,
     borderWidth: 2,
     borderColor: '#a3a3a3',
-    height: 40
+    height: 40,
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   button: {
     flex: 1,
-    height: 40,
-    borderWidth: 6,
-    borderColor: 'red'
+    height: 40
   }
 });
 

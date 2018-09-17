@@ -14,9 +14,6 @@ class Expenses extends React.Component {
           <AmountCard />
           <AmountCard />
           <AmountCard />
-          <View style={styles.buttonGroup}>
-            <Button>Add Expense</Button>
-          </View>
         </ScrollView>
       </View>
     );
@@ -38,7 +35,8 @@ const styles = StyleSheet.create({
   buttonGroup: {
     flex: 1,
     flexDirection: 'row',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    borderWidth: 1
   }
 });
 
